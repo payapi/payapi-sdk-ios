@@ -1,6 +1,7 @@
 # PayApi SDK for iOS
 
 Swift implementation of [PayApi Secure Form](https://payapi.io/apidoc/#api-Payments-PostSecureForm).
+
 ## Contents
 
 Includes an easy-to-use PayApi SDK for any iOS application, working with Swift.
@@ -26,10 +27,31 @@ Initialize SDK with your credentials (Public Id and PayApi key)
 let secureForm = SecureForm(publicId: "SHOP_PUBLIC_ID", apiKey: "PROVIDED_API_KEY")
 ```
 
-#### Building a product data dictionary
+### Building a product data dictionary
 
 ```swift
-let productData: [String: Any] = [ "order": [ "sumInCentsIncVat": 344, "sumInCentsExcVat": 300, "vatInCents": 22, "currency": "EUR", "referenceId": "ref123", ], "products": [[ "quantity": 1, "title": "Black bling cap", "priceInCentsIncVat": 122, "priceInCentsExcVat": 100, "vatInCents": 22, "vatPercentage": 22, ]], "consumer": [ "email": "support@payapi.io" ]]
+let productData: [String: Any] = [
+  "order": [
+    "sumInCentsIncVat": 122,
+    "sumInCentsExcVat": 100,
+    "vatInCents": 22,
+    "currency": "EUR",
+    "referenceId": "ref123"
+  ],
+  "products": [
+    [
+      "quantity": 1,
+      "title": "Black bling cap",
+      "priceInCentsIncVat": 122,
+      "priceInCentsExcVat": 100,
+      "vatInCents": 22,
+      "vatPercentage": 22
+    ]
+  ],
+  "consumer": [
+    "email": "support@payapi.io"
+  ]
+]
 ```
 
 ### Adding functionality to a button
@@ -43,4 +65,3 @@ secureForm.addSecureFormToButton(button: myButton, message: productData)
 ## Questions?
 
 Please contact support@payapi.io for any questions.
-
