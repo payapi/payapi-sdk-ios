@@ -1,0 +1,33 @@
+PayApi SDK for iOS
+
+Swift implementation of PayApi Secure Form (https://payapi.io/apidoc/#api-Payments-PostSecureForm)
+
+Contents
+
+Includes an easy-to-use PayApi SDK for any iOS application, working with Swift.
+In order to use the SDK, please register for a free PayApi user account (https://input.payapi.io)
+
+Installation
+
+CocoaPods is the recommended installation method.
+pod 'PayApiSDK'
+
+Usage
+
+import PayApiSDK
+
+Building a product data dictionary
+
+[ "order": [ "sumInCentsIncVat": 344, "sumInCentsExcVat": 300, "vatInCents": 22, "currency": "EUR", "referenceId": "ref123", ], "products": [[ "quantity": 1, "title": "Black bling cap", "priceInCentsIncVat": 122, "priceInCentsExcVat": 100, "vatInCents": 22, "vatPercentage": 22, ]], "consumer": [ "email": "support@payapi.io" ]]
+
+
+Adding functionality to a button
+
+Method to open the Secure Form on any UIButton TouchUpInside event
+
+secureForm.addSecureFormToButton(button: myButton, message: productData)
+
+Questions?
+
+Please contact support@payapi.io for any questions.
+
